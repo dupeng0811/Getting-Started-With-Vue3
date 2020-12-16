@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Hello World {{message}}!</title>
+</head>
+<body>
+<div id="counter" v-bind:title="message">
+    Counter: {{ counter }}
+</div>
+</body>
+
+<script type="text/javascript">
+    const Counter = {
+        data() {
+            return {
+                counter: 0,
+                message:"Hello World!`"
+            }
+        },
+        mounted() {
+            setInterval(() => {
+                this.counter++
+            }, 1000)
+        }
+    }
+
+    Vue.createApp(Counter).mount('#counter')
+</script>
+</html>
