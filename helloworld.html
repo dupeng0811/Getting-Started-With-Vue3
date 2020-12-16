@@ -6,8 +6,9 @@
     <title>Hello World {{message}}!</title>
 </head>
 <body>
-<div id="counter" v-bind:title="message">
+<div id="counter">
     Counter: {{ counter }}
+    <div v-bind:title="message + counter" v-if="counter>10">大于10</div>
 </div>
 </body>
 
@@ -15,8 +16,8 @@
     const Counter = {
         data() {
             return {
-                counter: 0,
-                message:"Hello World!`"
+                counter: 8,
+                message:"Hello World!"
             }
         },
         mounted() {
